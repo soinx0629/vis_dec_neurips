@@ -26,7 +26,7 @@ conda activate vis_dec
 In Phase 1, we pre-train an MAE with a contrastive loss to learn fMRI representations from unlabeled fMRI data from HCP. The masking which sets a certain portion of the input data to zero targets the spatial redundancy of fMRI data. The calculation of recovering the original data from the remaining after masking suppresses noises. Optimization of the contrastive loss discerns common patterns of brain activities over individual variances.
 #### Preparing Data 
 In this phase, we use fMRI samples released by HCP as pretraining data. Due to size limitations and licensing constraints, please download from the official website (https://db.humanconnectome.org/data/projects/HCP_1200).  put in the ./data/HCP directory and preprocess the data with ./data/HCP/preprocess_hcp.py. Resulting data and directory looks like:
-
+```
 /data
 ┣ 📂 HCP
 ┃   ┣ 📂 npz
@@ -34,7 +34,7 @@ In this phase, we use fMRI samples released by HCP as pretraining data. Due to s
 ┃   ┃   ┃   ┗ HCP_visual_voxel.npz
 ┃   ┃   ┣ 📂 dummy_sub_02
 ┃   ┃   ┃   ┗ ...
-
+```
 #### Training Model
 
 Run
@@ -65,6 +65,8 @@ We use the Generic Object Decoding (GOD) and BOLD5000 dataset in this phase. GOD
 We provided processed versions of these datasets which can be downloaded from . 
 Please download and uncompress it into the ./data. Resulting directory looks like:
 
+```
+
 ┣ 📂 Kamitani
 ┃   ┣ 📂 npz
 ┃   ┃   ┗ 📜 sbj_1.npz
@@ -87,6 +89,8 @@ Please download and uncompress it into the ./data. Resulting directory looks lik
 ┃   ┃   ┣ 📂 Image_Labels
 ┃   ┃   ┣ 📂 Scene_Stimuli
 ┃   ┃   ┣ 📂 Stimuli_Presentation_Lists
+
+```
 
 #### Training Model
 
