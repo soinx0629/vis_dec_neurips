@@ -1,0 +1,6 @@
+setup.py
+mind_vis.egg-info/PKG-INFO
+mind_vis.egg-info/SOURCES.txt
+mind_vis.egg-info/dependency_links.txt
+mind_vis.egg-info/requires.txt
+mind_vis.egg-info/top_level.txt
