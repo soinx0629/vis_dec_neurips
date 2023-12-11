@@ -1,6 +1,6 @@
 # Contrast, Attend and Diffuse to Decode High-Resolution Images from Brain Activities
 
-Jingyuan Sun, Mingxiao Li, Zijiao Chen, Yunhao Zhang, Shaonan Wang and Marie-Francine Moens. In Proceedings of the Neural Information Processing Systems 2023 (NeurIPS'23).
+[Jingyuan Sun], Mingxiao Li, Zijiao Chen, Yunhao Zhang, Shaonan Wang and Marie-Francine Moens. In Proceedings of the Neural Information Processing Systems 2023 (NeurIPS'23).
 
 ## 1. Abstract
 Decoding visual stimuli from neural responses recorded by functional Magnetic Resonance Imaging (fMRI) presents an intriguing intersection between cognitive neuroscience and machine learning, promising advancements in understanding human visual perception. However, the task is challenging due to the noisy nature of fMRI signals and the intricate pattern of brain visual representations. To mitigate these challenges, we introduce a two-phase fMRI representation learning framework. The first phase pre-trains an fMRI feature learner with a proposed Double-contrastive Mask Auto-encoder to learn denoised representations. The second phase tunes the feature learner to attend to neural activation patterns most informative for visual reconstruction with guidance from an image auto-encoder. The optimized fMRI feature learner then conditions a latent diffusion model to reconstruct image stimuli from brain activities. Experimental results demonstrate our model's superiority in generating high-resolution and semantically accurate images, substantially exceeding previous state-of-the-art methods by $39.34\%$ in the 50-way-top-1 semantic classification accuracy. The code implementations will be available at 
@@ -114,5 +114,5 @@ python -m torch.distributed.launch --nproc_per_node=4 code/stageA2_mbm_finetune_
 
 
 ## Acknowledgement
-Large part of the code is inheritated from out previous work [Mind-Vis] (https://github.com/zjc062/mind-vis) . 
+Large part of the code is inheritated from out previous work [Mind-Vis](https://github.com/zjc062/mind-vis) . 
 We express our gratitude to the following entities for generously sharing their raw and pre-processed data with the public: [Kamitani Lab](https://github.com/KamitaniLab), [Weizmann Vision Lab](https://github.com/WeizmannVision), and the [BOLD5000 team](https://bold5000-dataset.github.io/website/). Our implementation of Masked Brain Modeling is built upon [Masked Autoencoders](https://github.com/facebookresearch/mae) by Facebook Research, and our Conditional Latent Diffusion Model implementation is based on the work found in the [Latent Diffusion Model](https://github.com/CompVis/latent-diffusion) repository from CompVis. We extend our appreciation to these authors for openly sharing their code and checkpoints.
