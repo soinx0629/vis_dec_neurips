@@ -25,7 +25,7 @@ conda activate vis_dec
 #### Overview
 In Phase 1, we pre-train an MAE with a contrastive loss to learn fMRI representations from unlabeled fMRI data from HCP. The masking which sets a certain portion of the input data to zero targets the spatial redundancy of fMRI data. The calculation of recovering the original data from the remaining after masking suppresses noises. Optimization of the contrastive loss discerns common patterns of brain activities over individual variances.
 #### Preparing Data 
-In this phase, we use fMRI samples released by HCP as pretraining data. Due to size limitations and licensing constraints, please download from the official website (https://db.humanconnectome.org/data/projects/HCP_1200).  put in the ./data/HCP directory and preprocess the data with ./data/HCP/preprocess_hcp.py. Resulting data and directory looks like:
+In this phase, we use fMRI samples released by HCP as pretraining data. Due to size limitations and licensing constraints, please download from the official website (https://db.humanconnectome.org/data/projects/HCP_1200), put them in the ./data/HCP directory and preprocess the data with ./data/HCP/preprocess_hcp.py. Resulting data and directory looks like:
 ```
 /data
 ┣ 📂 HCP
@@ -37,7 +37,7 @@ In this phase, we use fMRI samples released by HCP as pretraining data. Due to s
 ```
 #### Training Model
 
-Run
+You can run
 ```
 python -m torch.distributed.launch —nproc_per_node=1  code/stageA1_mbm_pretrain_contrast.py \
 --output_path . \  
@@ -50,10 +50,11 @@ python -m torch.distributed.launch —nproc_per_node=1  code/stageA1_mbm_pretrai
 —mask_ratio 0.75 \
 —num_epoch 140 
 ```
+to pretrain the model by youself.
 do_self_contrast and do_contrast_contrast control whether or not self_contrast and contrast_contrast loss are used.
 self_contrast_loss_weight and cross_contrast_loss_weight denote the weight of self-contrast and cross-contrast loss in the joint loss.
 
-
+You can also download our pretrained ckpt from 
 ### 3.2 FRL Phase 2
 
 #### Overview 
@@ -62,7 +63,7 @@ After pre-training in Phase 1, we tune the fMRI auto-encoder with an image auto-
 #### Preparing Data
 We use the Generic Object Decoding (GOD) and BOLD5000 dataset in this phase. GOD is a specialized resource developed for fMRI-based decoding. It aggregates fMRI data gathered through the presentation of images from 200 representative object categories, originating from the 2011 fall release of ImageNet. The training session incorporated 1,200 images (8 per category from 150 distinct object categories). The test session included 50 images (one from each of the 50 object categories). The categories in the test session were unique from those in the training session and were introduced in a randomized sequence across runs. On five subjects the fMRI scanning was conducted. BOLD5000   is a result of an extensive slow event-related human brain fMRI study. It comprises 5,254 images, with 4,916 of them being unique.  The images in BOLD5000 were selected from three popular computer vision datasets: ImageNet, COCO, and Scenes.  
 
-We provided processed versions of these datasets which can be downloaded from . 
+We provided processed versions of these datasets which can be downloaded from https://1drv.ms/u/s!AlmPyF18ti-A3Xec-3-PdsaO230u?e=uL35tO. 
 Please download and uncompress it into the ./data. Resulting directory looks like:
 
 ```
@@ -94,7 +95,7 @@ Please download and uncompress it into the ./data. Resulting directory looks lik
 
 #### Training Model
 
-Please run the following commands to get the fMRI encoder that we use to produce the reported reconstruction performance on GOD subject 3 in the paper.
+You can run the following commands to get the fMRI encoder that we use to produce the reported reconstruction performance on GOD subject 3 in the paper.
 
 ```
 python -m torch.distributed.launch --nproc_per_node=4 code/stageA2_mbm_finetune_cross.py \
@@ -110,9 +111,9 @@ python -m torch.distributed.launch --nproc_per_node=4 code/stageA2_mbm_finetune_
 --img_mask_ratio 0.5 \
 --mask_ratio 0.75 
 ```
-
+You can also download our trained ckpt from 
 
 
 ## Acknowledgement
-Large part of the code is inheritated from out previous work [Mind-Vis](https://github.com/zjc062/mind-vis) . 
+A large part of the code is inheritated from out previous work [Mind-Vis](https://github.com/zjc062/mind-vis) . 
 We express our gratitude to the following entities for generously sharing their raw and pre-processed data with the public: [Kamitani Lab](https://github.com/KamitaniLab), [Weizmann Vision Lab](https://github.com/WeizmannVision), and the [BOLD5000 team](https://bold5000-dataset.github.io/website/). Our implementation of Masked Brain Modeling is built upon [Masked Autoencoders](https://github.com/facebookresearch/mae) by Facebook Research, and our Conditional Latent Diffusion Model implementation is based on the work found in the [Latent Diffusion Model](https://github.com/CompVis/latent-diffusion) repository from CompVis. We extend our appreciation to these authors for openly sharing their code and checkpoints.
