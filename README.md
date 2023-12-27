@@ -136,7 +136,7 @@ python code/ldm_finetune.py --pretrain_mbm_path your_phase2_ckpt_path \
 
 
 ## Acknowledgements
-A large part of the code is inheritated from out previous work [Mind-Vis](https://github.com/zjc062/mind-vis) . 
+A large part of the code is inheritated from our previous work [Mind-Vis](https://github.com/zjc062/mind-vis) . 
 We express our gratitude to the following entities for generously sharing their raw and pre-processed data with the public: [Kamitani Lab](https://github.com/KamitaniLab), [Weizmann Vision Lab](https://github.com/WeizmannVision), and the [BOLD5000 team](https://bold5000-dataset.github.io/website/). Our implementation of Masked Brain Modeling is built upon [Masked Autoencoders](https://github.com/facebookresearch/mae) by Facebook Research, and our Conditional Latent Diffusion Model implementation is based on the work found in the [Latent Diffusion Model](https://github.com/CompVis/latent-diffusion) repository from CompVis. We extend our appreciation to these authors for openly sharing their code and checkpoints.
 
 ## Citation
