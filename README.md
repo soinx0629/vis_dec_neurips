@@ -1,6 +1,6 @@
 # Contrast, Attend and Diffuse to Decode High-Resolution Images from Brain Activities
 
-[Jingyuan Sun](https://sites.google.com/view/jingyuan-sun/home?authuser=0), Mingxiao Li, Zijiao Chen, Yunhao Zhang, Shaonan Wang and Marie-Francine Moens. In Proceedings of the Neural Information Processing Systems 2023 (NeurIPS'23).
+[Jingyuan Sun*](https://sites.google.com/view/jingyuan-sun/home?authuser=0), Mingxiao Li*, Zijiao Chen, Yunhao Zhang, Shaonan Wang and Marie-Francine Moens. In Proceedings of the Neural Information Processing Systems 2023 (NeurIPS'23).
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/contrast-attend-and-diffuse-to-decode-high/brain-visual-reconstruction-from-fmri-on-god)](https://paperswithcode.com/sota/brain-visual-reconstruction-from-fmri-on-god?p=contrast-attend-and-diffuse-to-decode-high)
 
