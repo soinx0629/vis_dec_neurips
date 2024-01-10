@@ -56,7 +56,7 @@ to pretrain the model by youself.
 do_self_contrast and do_contrast_contrast control whether or not self_contrast and contrast_contrast loss are used.
 self_contrast_loss_weight and cross_contrast_loss_weight denote the weight of self-contrast and cross-contrast loss in the joint loss.
 
-You can also download our pretrained ckpt from https://1drv.ms/u/s!AlmPyF18ti-A3XmuKMPEfVNdvmsT?e=ROrzfE
+You can also download our pretrained ckpt from https://1drv.ms/u/s!AlmPyF18ti-A3XmuKMPEfVNdvmsT?e=ROrzfE https://1drv.ms/u/s!AlmPyF18ti-A3XmuKMPEfVNdvmsT?e=3bZ0jj
 ### 3.2 FRL Phase 2
 
 #### Overview 
@@ -65,7 +65,7 @@ After pre-training in Phase 1, we tune the fMRI auto-encoder with an image auto-
 #### Preparing Data
 We use the Generic Object Decoding (GOD) and BOLD5000 dataset in this phase. GOD is a specialized resource developed for fMRI-based decoding. It aggregates fMRI data gathered through the presentation of images from 200 representative object categories, originating from the 2011 fall release of ImageNet. The training session incorporated 1,200 images (8 per category from 150 distinct object categories). The test session included 50 images (one from each of the 50 object categories). The categories in the test session were unique from those in the training session and were introduced in a randomized sequence across runs. On five subjects the fMRI scanning was conducted. BOLD5000   is a result of an extensive slow event-related human brain fMRI study. It comprises 5,254 images, with 4,916 of them being unique.  The images in BOLD5000 were selected from three popular computer vision datasets: ImageNet, COCO, and Scenes.  
 
-We provided processed versions of these datasets which can be downloaded from https://1drv.ms/u/s!AlmPyF18ti-A3Xec-3-PdsaO230u?e=uL35tO. 
+We provided processed versions of these datasets which can be downloaded from https://1drv.ms/u/s!AlmPyF18ti-A3Xec-3-PdsaO230u?e=uL35tO. https://1drv.ms/u/s!AlmPyF18ti-A3Xec-3-PdsaO230u?e=ivcd7L 
 Please download and uncompress it into the ./data. Resulting directory looks like:
 
 ```
@@ -113,7 +113,7 @@ python -m torch.distributed.launch --nproc_per_node=4 code/phase2_finetune_cross
 --img_mask_ratio 0.5 \
 --mask_ratio 0.75 
 ```
-You can also download our trained ckpt from https://1drv.ms/u/s!AlmPyF18ti-A3XjJEkOfBELTl71W?e=FbsYki
+You can also download our trained ckpt from https://1drv.ms/u/s!AlmPyF18ti-A3XjJEkOfBELTl71W?e=FbsYki https://1drv.ms/u/s!AlmPyF18ti-A3XjJEkOfBELTl71W?e=wlihVF
 
 ### 3.3 Tuning LDM
 #### Overview
